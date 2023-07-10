@@ -1,0 +1,19 @@
+# Archivos de entorno y configuración local
+.env
+*.pyc
+*.pyo
+__pycache__/
+
+# Directorios generados por herramientas de construcción
+build/
+dist/
+venv/
+.idea/
+.vscode/
+
+# Archivos de registro y salida
+*.log
+logs/
+*.swp
+
+.DS_Store
