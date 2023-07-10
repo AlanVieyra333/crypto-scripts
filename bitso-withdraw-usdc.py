@@ -19,12 +19,12 @@ def getUsdBalanceBitso():
   return float(bitsoApi.balances().usd.available)
 
 
-def withdrawUSDCToBinance():
+def withdrawToContactId(contacId):
   usdBalance = int(getUsdBalanceBitso())
   logging.info("Bitso balance: {:.4f} USDC".format(usdBalance))
   
   if usdBalance > MIN_USDC_AMOUNT:
-    result = bitsoApi.crypto_withdrawals(usdBalance, USDC_CONTACT_ID)
+    result = bitsoApi.crypto_withdrawals(usdBalance, contacId)
     logging.debug("Withdraw result:{}".format(result))
     if result is not None and result.amount is not None:
       logging.info("Withdrawn: {:.4f} USDC".format(result.amount))
@@ -33,4 +33,4 @@ def withdrawUSDCToBinance():
 
 
 if __name__ == '__main__':
-  withdrawUSDCToBinance()
+  withdrawToContactId(USDC_CONTACT_ID)
