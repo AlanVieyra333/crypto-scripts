@@ -11,7 +11,7 @@ import pandas as pd
 
 def main(argv):
  
-    usage = "%prog [opciones] <path_metadata_file>"
+    usage = "%prog [options] <path_metadata_file>"
     parser = OptionParser(usage=usage, add_help_option=False)
     parser.add_option("-h", "--help", action="help",
         help=u"Muestra este mensaje de ayuda y termina")
